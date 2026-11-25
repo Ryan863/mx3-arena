@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --bg-carbon: #0B0D10;
+  --bg-carbon-elevated: #12161C;
+  --bg-court-deep: #112236;
+  --bg-mineral: #F6F7F9;
+  --bg-pure: #FFFFFF;
+  --accent-gold: #F2C94C;
+  --accent-gold-hover: #EAB308;
+  --ink-dark: #0B0D10;
+  --ink-muted: #4B5563;
+  --ink-light: #F6F7F9;
+  --ink-light-muted: #9CA3AF;
+}
+
+@theme inline {
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+  background-color: var(--bg-carbon);
+  color: var(--ink-light);
+}
+
+body {
+  overflow-x: clip;
+  background-color: var(--bg-carbon);
+  color: var(--ink-light);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Textura cinematográfica sutil para acabamento tátil editorial */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
